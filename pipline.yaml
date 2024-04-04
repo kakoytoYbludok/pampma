@@ -1,4 +1,4 @@
-﻿name: CSharp_pipeline
+name: CSharp_pipeline
 
 on:
   push:
