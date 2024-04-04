@@ -21,6 +21,7 @@ namespace gostinka
     {
         DataBaseClass dataBase = new DataBaseClass();
         int i = 1;
+        bool correctcost = false;
         public koika()
         {
             InitializeComponent();
@@ -61,7 +62,7 @@ namespace gostinka
         private void koika_Loaded(object sender, RoutedEventArgs e)
         {
             FillComboBoxVidNomer();
-
+            btn_perehodkoi.IsEnabled = correctcost;
 
         }
 
@@ -86,12 +87,16 @@ namespace gostinka
         private void cb_VidNomerakoi_DropDownClosed(object sender, EventArgs e)
         {
             FillComBoxTypeBed();
+            lab_itogkoi.Content = CalculateCost(out correctcost);
+            btn_perehodkoi.IsEnabled = correctcost;
         }
 
 
         private void cb_VidNomerachet_DropDownClosed(object sender, EventArgs e)
         {
             FillComBoxTypeBed();
+            lab_itogkoi.Content = CalculateCost(out correctcost);
+            btn_perehodkoi.IsEnabled = correctcost;
         }
 
         private void FillComBoxNomerkoi()
@@ -116,12 +121,13 @@ namespace gostinka
         {
 
             FillComBoxNomerkoi();
-            lab_itogkoi.Content = CalculateCost();
+            lab_itogkoi.Content = CalculateCost(out correctcost);
         }
 
         private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
-            lab_itogkoi.Content = CalculateCost();
+            lab_itogkoi.Content = CalculateCost(out correctcost);
+            btn_perehodkoi.IsEnabled = correctcost;
         }
 
 
@@ -136,9 +142,9 @@ namespace gostinka
             return -1;
         }
 
-        private string CalculateCost()
+        private string CalculateCost(out bool correctcost)
         {
-
+            correctcost = false;
             int countdays = CountDays(data_koizaezd.SelectedDate, data_koiviezd.SelectedDate);
             int cost = dataBase.GetCost(cb_TypeBedkoi.Text);
             if (countdays == -1 || cost == -1)
@@ -146,12 +152,27 @@ namespace gostinka
                 return "Выберите остальные данные";
             }
             int result = countdays * cost;
+            if (result < 0)
+            {
+                return "Выберите корректные даты";
+            }
+
+            correctcost = true;;
             return result.ToString();
         }       
 
         private void data_koiviezd_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
-            lab_itogkoi.Content = CalculateCost();
+            lab_itogkoi.Content = CalculateCost(out correctcost);
+            btn_perehodkoi.IsEnabled = correctcost;
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            oplatanom oplatanom = new oplatanom();
+            //vhod.ShowDialog();
+            oplatanom.Show();
+            this.Close();
         }
     }
 

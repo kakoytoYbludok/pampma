@@ -20,6 +20,7 @@ namespace gostinka
     public partial class chetirmest : Window
     {
         int i = 1;
+        bool correctcost = false;
         DataBaseClass dataBase = new DataBaseClass();
         public chetirmest()
         {
@@ -101,6 +102,8 @@ namespace gostinka
         private void cb_VidNomerachet_DropDownClosed(object sender, EventArgs e)
         {
             FillComBoxTypeBed();
+            lab_itogchet.Content = CalculateCost(out correctcost);
+            btn_perehodchet.IsEnabled = correctcost;
         }
 
         private void FillComBoxNomerchet()
@@ -120,12 +123,15 @@ namespace gostinka
         {
 
             FillComBoxNomerchet();
+            lab_itogchet.Content = CalculateCost(out correctcost);
+            btn_perehodchet.IsEnabled = correctcost;
         }
 
 
         private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
-            lab_itogchet.Content = CalculateCost();
+            lab_itogchet.Content = CalculateCost(out correctcost);
+            btn_perehodchet.IsEnabled = correctcost;
         }
 
 
@@ -140,9 +146,9 @@ namespace gostinka
             return -1;
         }
 
-        private string CalculateCost()
+        private string CalculateCost(out bool correctcost)
         {
-
+            correctcost = false;
             int countdays = CountDays(data_chetzaezd.SelectedDate, data_chetviezd.SelectedDate);
             int cost = dataBase.GetCost(cb_TypeBedchet.Text);
             if (countdays == -1 || cost == -1)
@@ -150,12 +156,27 @@ namespace gostinka
                 return "Выберите остальные данные";
             }
             int result = countdays * cost;
+            if (result < 0)
+            {
+                return "Выберите корректные даты";
+            }
+
+            correctcost = true; ;
             return result.ToString();
         }
 
         private void data_chetviezd_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
-            lab_itogchet.Content = CalculateCost();
+            lab_itogchet.Content = CalculateCost(out correctcost);
+            btn_perehodchet.IsEnabled = correctcost;
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            oplatanom oplatanom = new oplatanom();
+            //vhod.ShowDialog();
+            oplatanom.Show();
+            this.Close();
         }
     }
 }

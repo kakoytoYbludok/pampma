@@ -3,17 +3,19 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:oxy="http://oxyplot.org/wpf"
         xmlns:local="clr-namespace:gostinka"
         mc:Ignorable="d"
         Title="AdminPanel" Height="450" Width="800">
     <Grid>
         <TabControl TabStripPlacement="Left">
+
             <TabItem Header="Пользователь" Height="24" Margin="-2,-2,0,0" VerticalAlignment="Top">
                 <Grid>
-                    <TextBox x:Name="tbLoginUser" HorizontalAlignment="Left" Margin="174,213,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="108" Height="28"/>
-                    <TextBox x:Name="tbMailUser" HorizontalAlignment="Left" Margin="174,273,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="108" Height="27"/>
-                    <TextBox x:Name="tbPassUser" HorizontalAlignment="Left" Margin="418,214,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="104" Height="27"/>
-                    <TextBox  x:Name="tbPhoneUser" HorizontalAlignment="Left" Margin="418,274,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="104" Height="27"/>
+                    <TextBox x:Name="tbLoginUser" HorizontalAlignment="Left" Margin="174,213,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="108" Height="28"/>
+                    <TextBox x:Name="tbMailUser" HorizontalAlignment="Left" Margin="174,273,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="108" Height="27"/>
+                    <TextBox x:Name="tbPassUser" HorizontalAlignment="Left" Margin="418,214,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="104" Height="27"/>
+                    <TextBox  x:Name="tbPhoneUser" HorizontalAlignment="Left" Margin="418,274,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="104" Height="27"/>
                     <Label Content="Логин:" HorizontalAlignment="Left" Margin="124,213,0,0" VerticalAlignment="Top" Width="50"/>
                     <Label Content="Пароль:" HorizontalAlignment="Left" Margin="359,213,0,0" VerticalAlignment="Top" Width="59"/>
                     <Label Content="Почта:" HorizontalAlignment="Left" Margin="114,274,0,0" VerticalAlignment="Top" Width="60"/>
@@ -24,24 +26,25 @@
                     <DataGrid Loaded="dgUser_Loaded" x:Name="dgUser" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,0,0,308" SelectionChanged="dgUser_SelectionChanged"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Заказы услуг" Margin="0,69,0,-73">
+            <TabItem Header="График" Margin="0,48,0,-52">
+                <Grid Background="#FFE5E5E5">
+                    <oxy:PlotView Model="{Binding PlotModel}" Margin="323,173,27,44" />
+                    <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,0,0,307"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="" Margin="-1,312,0,-315">
                 <Grid Background="#FFE5E5E5">
                     <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Брони" Margin="0,2,0,-5">
-                <Grid Background="#FFE5E5E5">
-                    <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}"/>
-                </Grid>
-            </TabItem>
-            <TabItem Header="Номера" Margin="0,5,0,-9">
+            <TabItem Header="Номера" Margin="1,-17,-1,13">
                 <Grid Background="White">
 
                     <DataGrid Loaded="dgNomer_Loaded" x:Name="dgNomer" d:ItemsSource="{d:SampleData ItemCount=5}"  SelectionChanged="dgNomer_SelectionChanged" Margin="0,0,0,308"/>
-                    <TextBox x:Name="tbNumber" HorizontalAlignment="Left" Margin="59,157,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="115" Height="28"/>
-                    <TextBox x:Name="tbVidNomera" HorizontalAlignment="Left" Margin="301,157,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="117" Height="28"/>
-                    <TextBox x:Name="tbPriceNomer" HorizontalAlignment="Left" Margin="98,209,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="76" Height="28"/>
-                    <TextBox x:Name="tbTypeBed" HorizontalAlignment="Left" Margin="301,209,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="183" Height="27"/>
+                    <TextBox x:Name="tbNumber" HorizontalAlignment="Left" Margin="59,157,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="115" Height="28"/>
+                    <TextBox x:Name="tbVidNomera" HorizontalAlignment="Left" Margin="301,157,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="117" Height="28"/>
+                    <TextBox x:Name="tbPriceNomer" HorizontalAlignment="Left" Margin="98,209,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="76" Height="28"/>
+                    <TextBox x:Name="tbTypeBed" HorizontalAlignment="Left" Margin="301,209,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="183" Height="27"/>
                     <Label Content="Номер:" HorizontalAlignment="Left" Margin="5,158,0,0" VerticalAlignment="Top" Width="54"/>
                     <Label Content="Вид номера:" HorizontalAlignment="Left" Margin="218,158,0,0" VerticalAlignment="Top" Width="78"/>
                     <Label Content="Тип кроватей:" HorizontalAlignment="Left" Margin="211,210,0,0" VerticalAlignment="Top" Width="92"/>
@@ -54,11 +57,11 @@
             <TabItem Header="Сотрудники" Margin="0,-60,0,58">
                 <Grid Background="White">
                     <DataGrid Loaded="dgWorker_Loaded" x:Name="dgWorker" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,0,0,307" SelectionChanged="dgWorker_SelectionChanged"/>
-                    <TextBox x:Name="tbLoginWorker" HorizontalAlignment="Left" Margin="174,213,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="108" Height="28"/>
-                    <TextBox x:Name="tbpassportWorker" HorizontalAlignment="Left" Margin="174,273,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="108" Height="27"/>
-                    <TextBox x:Name="tbPassWorker" HorizontalAlignment="Left" Margin="418,214,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="104" Height="27"/>
-                    <TextBox x:Name="tbPhoneWorker" HorizontalAlignment="Left" Margin="418,274,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="104" Height="27"/>
-                    <TextBox x:Name="tbDatanaim" HorizontalAlignment="Left" Margin="296,169,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="104" Height="27"/>
+                    <TextBox x:Name="tbLoginWorker" HorizontalAlignment="Left" Margin="174,213,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="108" Height="28"/>
+                    <TextBox x:Name="tbpassportWorker" HorizontalAlignment="Left" Margin="174,273,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="108" Height="27"/>
+                    <TextBox x:Name="tbPassWorker" HorizontalAlignment="Left" Margin="418,214,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="104" Height="27"/>
+                    <TextBox x:Name="tbPhoneWorker" HorizontalAlignment="Left" Margin="418,274,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="104" Height="27"/>
+                    <TextBox x:Name="tbDatanaim"  HorizontalAlignment="Left" Margin="296,169,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"  Width="104" Height="27"/>
                     <Label Content="Логин:" HorizontalAlignment="Left" Margin="124,213,0,0" VerticalAlignment="Top" Width="50"/>
                     <Label Content="Пароль:" HorizontalAlignment="Left" Margin="359,213,0,0" VerticalAlignment="Top" Width="59"/>
                     <Label Content="Паспорт:" HorizontalAlignment="Left" Margin="114,274,0,0" VerticalAlignment="Top" Width="60"/>
@@ -70,6 +73,7 @@
                 </Grid>
             </TabItem>
         </TabControl>
-
+        <Button  Content="Выйти" HorizontalAlignment="Left" Margin="0,384,0,0" VerticalAlignment="Top" Height="40" Width="91" Background="#000000" Foreground="white" Click="Button_Click" />
+        
     </Grid>
 </Window>

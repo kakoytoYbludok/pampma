@@ -5,28 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:gostinka"
         mc:Ignorable="d"
-        Title="profile" Height="450" Width="800">
+        Title="profile" Height="450" Width="800" Loaded="Window_Loaded">
     <Window.Background>
         <ImageBrush ImageSource="image/profile.jpg" />
     </Window.Background>
     <Grid>
-        <Rectangle HorizontalAlignment="Center" Height="50" Margin="0,21,0,0" Stroke="Black" VerticalAlignment="Top" RadiusX="30" RadiusY="30" Width="432" Fill="#150909"/>
-        <Label Content="NEFORMALHOTEL" HorizontalAlignment="Center" Margin="0,26,0,0" VerticalAlignment="Top" Width="276" Height="45" HorizontalContentAlignment="Center" FontSize="25" Foreground="White" FontFamily="Sylfaen"/>
-        <Rectangle HorizontalAlignment="Center" Height="339" Stroke="Black" Opacity="0.5" Fill="#000000" VerticalAlignment="Top" RadiusX="10" RadiusY="10" Width="612" Margin="0,85,0,0"/>
-        <Rectangle HorizontalAlignment="Center" Height="50" Margin="0,85,0,0" Stroke="Black" VerticalAlignment="Top" RadiusX="10" RadiusY="10" Width="220" Fill="#000000"/>
+        <Rectangle HorizontalAlignment="Center" Height="50" Margin="0,5,0,0" Stroke="Black" VerticalAlignment="Top" RadiusX="30" RadiusY="30" Width="432" Fill="#150909"/>
+        <Label Content="NEFORMALHOTEL" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="276" Height="45" HorizontalContentAlignment="Center" FontSize="25" Foreground="White" FontFamily="Sylfaen"/>
+        <Rectangle HorizontalAlignment="Center" Height="313" Stroke="Black" Opacity="0.5" Fill="#000000" VerticalAlignment="Top" RadiusX="10" RadiusY="10" Width="612" Margin="0,55,0,0"/>
+        <Rectangle HorizontalAlignment="Center" Height="35" Margin="0,56,0,0" Stroke="Black" VerticalAlignment="Top" RadiusX="10" RadiusY="10" Width="220" Fill="#000000"/>
         <Button  Content="Главная" HorizontalAlignment="Left" Margin="699,0,0,0" VerticalAlignment="Top" Height="40" Width="85" Background="#000000" Foreground="white" Click="Button_Click" />
-        <Label Content="Профиль" HorizontalAlignment="Center" Margin="0,90,0,0" VerticalAlignment="Top" Width="220" Height="40" HorizontalContentAlignment="Center" FontSize="25" Foreground="White" FontFamily="Sylfaen"/>
-        <Label Content="Логин:" HorizontalAlignment="Left" Margin="192,153,0,0" VerticalAlignment="Top" Width="88" Height="32" HorizontalContentAlignment="Center" FontSize="20" Foreground="White" FontFamily="Sylfaen"/>
-        <Rectangle HorizontalAlignment="Center" Height="86" Stroke="Black" VerticalAlignment="Top"  Width="2" Fill="#000000" Margin="0,143,0,0"/>
-        <Button  Content="Выйти из аккаунта" HorizontalAlignment="Left" Margin="206,196,0,0" VerticalAlignment="Top" Height="29" Width="109" Background="#000000" Foreground="white" Click="Button_Click1" />
-        <Label Content="Телефон:" HorizontalAlignment="Left" Margin="406,151,0,0" VerticalAlignment="Top" Width="90" Height="38" HorizontalContentAlignment="Center" FontSize="20" Foreground="White" FontFamily="Sylfaen"/>
-        <Label Content="Почта:" HorizontalAlignment="Left" Margin="406,189,0,0" VerticalAlignment="Top" Width="90" Height="38" HorizontalContentAlignment="Center" FontSize="20" Foreground="White" FontFamily="Sylfaen"/>
-        <Rectangle HorizontalAlignment="Center" Height="32" Margin="0,234,0,0" Stroke="Black" VerticalAlignment="Top" RadiusX="10" RadiusY="10" Width="220" Fill="#000000"/>
-        <Label Content="История" HorizontalAlignment="Center" Margin="0,232,0,0" VerticalAlignment="Top" Width="114" Height="34" HorizontalContentAlignment="Center" FontSize="20" Foreground="White" FontFamily="Sylfaen"/>
-        <Rectangle HorizontalAlignment="Center" Height="145" Stroke="Black" Opacity="0.5" Fill="#000000" VerticalAlignment="Top" RadiusX="10" RadiusY="10" Width="520" Margin="0,271,0,0"/>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="280,158,0,0" VerticalAlignment="Top" Width="114"/>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="496,160,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="496,196,0,0" VerticalAlignment="Top" Width="120"/>
-
+        <Label Content="Профиль" HorizontalAlignment="Center" Margin="0,55,0,0" VerticalAlignment="Top" Width="220" Height="35" HorizontalContentAlignment="Center" FontSize="20" Foreground="White" FontFamily="Sylfaen"/>
+        <Label Content="Логин:" HorizontalAlignment="Left" Margin="164,92,0,0" VerticalAlignment="Top" Width="88" Height="32" HorizontalContentAlignment="Center" FontSize="20" Foreground="White" FontFamily="Sylfaen"/>
+        <Rectangle HorizontalAlignment="Center" Height="71" Stroke="Black" VerticalAlignment="Top"  Width="2" Fill="#000000" Margin="0,97,0,0"/>
+        <Button  Content="Выйти из аккаунта" HorizontalAlignment="Left" Margin="206,137,0,0" VerticalAlignment="Top" Height="29" Width="108" Background="#000000" Foreground="white" Click="Button_Click1" />
+        <Label Content="Телефон:" HorizontalAlignment="Left" Margin="406,92,0,0" VerticalAlignment="Top" Width="90" Height="38" HorizontalContentAlignment="Center" FontSize="20" Foreground="White" FontFamily="Sylfaen"/>
+        <Label Content="Почта:" HorizontalAlignment="Left" Margin="406,130,0,0" VerticalAlignment="Top" Width="90" Height="38" HorizontalContentAlignment="Center" FontSize="20" Foreground="White" FontFamily="Sylfaen"/>
+        <Rectangle HorizontalAlignment="Center" Height="32" Margin="0,176,0,0" Stroke="Black" VerticalAlignment="Top" RadiusX="10" RadiusY="10" Width="220" Fill="#000000"/>
+        <Label Content="История" HorizontalAlignment="Center" Margin="0,174,0,0" VerticalAlignment="Top" Width="114" Height="34" HorizontalContentAlignment="Center" FontSize="20" Foreground="White" FontFamily="Sylfaen"/>
+        <Rectangle HorizontalAlignment="Center" Height="223" Stroke="Black" Opacity="0.5" Fill="#000000" VerticalAlignment="Top" RadiusX="10" RadiusY="10" Width="520" Margin="0,211,0,0"/>
+        <Label x:Name="lb_Login" Content="" HorizontalAlignment="Left" Margin="252,100,0,0" VerticalAlignment="Top" Foreground="White" Width="141" Height="24"/>
+        <Label x:Name="lb_Mail" HorizontalAlignment="Left" Margin="494,129,0,0" VerticalAlignment="Top" Foreground="White" Width="154" Height="28"/>
+        <Label x:Name="lb_Phone" Content="" HorizontalAlignment="Left" Margin="496,98,0,0" VerticalAlignment="Top" Foreground="White" Width="122"/>
+        <DataGrid x:Name="dg_History" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="152,217,152,125"/>
+        <TextBox x:Name="tb_Poisk" HorizontalAlignment="Left" Margin="521,188,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="tb_Poisk_TextChanged"/>
+        <DataGrid x:Name="dg_HisUsl" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="152,339,152,10" />
+        <Label Content="Поиск" HorizontalAlignment="Left" Margin="557,162,0,0" VerticalAlignment="Top" Width="48"/>
+        <Label Content="Услуги" HorizontalAlignment="Left" Margin="379,308,0,0" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.5,0.5" Foreground="White" FontSize="16" FontWeight="Bold">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.262"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
     </Grid>
 </Window>

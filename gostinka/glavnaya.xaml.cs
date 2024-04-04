@@ -64,11 +64,11 @@ namespace gostinka
             this.Close();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Button_stud(object sender, RoutedEventArgs e)
         {
-            vhod vhod = new vhod();
+            studia studia = new studia();
             //vhod.ShowDialog();
-            vhod.Show();
+            studia.Show();
             this.Close();
         }
     }

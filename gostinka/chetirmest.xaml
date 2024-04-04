@@ -52,7 +52,7 @@
         <ComboBox x:Name="cb_Nomerchet" HorizontalAlignment="Left" Margin="270,270,0,0" VerticalAlignment="Top" Width="66" Height="33"/>
         <Label Content="Заезд:" HorizontalAlignment="Left" Margin="23,200,0,0" VerticalAlignment="Top" Width="61" FontSize="16" Foreground="#FFFBFBFB" FontFamily="Yu Gothic UI Light"/>
         <Label Content="Выезд:" HorizontalAlignment="Left" Margin="23,232,0,0" VerticalAlignment="Top" Width="61" FontSize="16" Foreground="#FFFBFBFB" FontFamily="Yu Gothic UI Light"/>
-        <Button Content="Перейти к оформлению номера" HorizontalAlignment="Left" Margin="138,383,0,0" VerticalAlignment="Top" Height="23" Width="179" Background="red" Foreground="Black" FontWeight="Bold" FontFamily="Sylfaen"  />
+        <Button x:Name="btn_perehodchet" Content="Перейти к оформлению номера" HorizontalAlignment="Left" Margin="138,383,0,0" VerticalAlignment="Top" Height="23" Width="179" Background="red" Foreground="Black" FontWeight="Bold" FontFamily="Sylfaen" Click="Button_Click_2"  />
         <Button  Content="Главная" HorizontalAlignment="Left" Margin="715,0,0,0" VerticalAlignment="Top" Height="40" Width="85" Background="#000000" Foreground="white" Click="Button_Click_1" />
         <DatePicker Name="data_chetzaezd" HorizontalAlignment="Left" Margin="84,0,0,0" VerticalAlignment="Center" SelectedDateChanged="DatePicker_SelectedDateChanged"/>
         <DatePicker Name="data_chetviezd" HorizontalAlignment="Left" Margin="84,239,0,0" VerticalAlignment="Top" SelectedDateChanged="data_chetviezd_SelectedDateChanged"/>

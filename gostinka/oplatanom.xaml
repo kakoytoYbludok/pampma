@@ -5,20 +5,56 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:gostinka"
         mc:Ignorable="d"
-        Title="oplatanom" Height="450" Width="800">
+        Title="oplatanom" Height="450" Width="800" Loaded="Window_Loaded">
     <Window.Background>
         <ImageBrush ImageSource="image/oformlenie.jpg" />
     </Window.Background>
     <Grid>
         <Rectangle HorizontalAlignment="Center" Height="50" Margin="0,21,0,0" Stroke="Black" VerticalAlignment="Top" RadiusX="30" RadiusY="30" Width="432" Fill="#150909"/>
         <Label Content="NEFORMALHOTEL" HorizontalAlignment="Center" Margin="0,26,0,0" VerticalAlignment="Top" Width="276" Height="45" HorizontalContentAlignment="Center" FontSize="25" Foreground="White" FontFamily="Sylfaen"/>
-        <Rectangle HorizontalAlignment="Center" Height="339" Stroke="Black" Opacity="0.5" Fill="#000000" VerticalAlignment="Top" RadiusX="10" RadiusY="10" Width="612" Margin="0,85,0,0"/>
+        <Rectangle HorizontalAlignment="Center" Height="338" Stroke="Black" Opacity="0.5" Fill="#000000" VerticalAlignment="Top" RadiusX="10" RadiusY="10" Width="612" Margin="0,88,0,0"/>
         <Rectangle HorizontalAlignment="Center" Height="50" Margin="0,85,0,0" Stroke="Black" VerticalAlignment="Top" RadiusX="10" RadiusY="10" Width="276" Fill="#000000"/>
-        <Button Style="{DynamicResource ButtonStyle228}" Click="Button_Click" Content="Забронировать" HorizontalAlignment="Center" Margin="0,379,0,0" VerticalAlignment="Top" Height="28" Width="216" Background="Red" Foreground="white" />
-        <Button  Content="Главная" HorizontalAlignment="Left" Margin="699,0,0,0" VerticalAlignment="Top" Height="40" Width="85" Background="#000000" Foreground="white" Click="Button_Click" />
+        <Button Style="{DynamicResource ButtonStyle228}"  Content="Забронировать" HorizontalAlignment="Center" Margin="0,393,0,0" VerticalAlignment="Top" Height="28" Width="216" Background="Red" Foreground="white" Click="Button_Click_1" />
+        <Button  Content="Главная" HorizontalAlignment="Left" Margin="699,0,0,0" VerticalAlignment="Top" Height="40" Width="85" Background="#000000" Foreground="white" Click="Button_Click"  />
         <Label Content="Оформление номера" HorizontalAlignment="Center" Margin="0,90,0,0" VerticalAlignment="Top" Width="250" Height="40" HorizontalContentAlignment="Center" FontSize="25" Foreground="White" FontFamily="Sylfaen"/>
-        <ComboBox HorizontalAlignment="Left" Margin="405,175,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Способ оплаты:" HorizontalAlignment="Left" Margin="230,166,0,0" VerticalAlignment="Top" Width="155" Height="40" HorizontalContentAlignment="Center" FontSize="18" Foreground="White" FontFamily="Sylfaen"/>
+
+        <Rectangle HorizontalAlignment="Center" Height="49" Stroke="Black" Opacity="0.5" Fill="#000000" VerticalAlignment="Top" RadiusX="10" RadiusY="10" Width="612" Margin="0,159,0,0"/>
+        <Rectangle HorizontalAlignment="Left" Height="28" Margin="344,170,0,0" Stroke="Black" VerticalAlignment="Top" RadiusX="10" RadiusY="10" Width="153" Fill="#000000"/>
+        <Rectangle HorizontalAlignment="Left" Height="28" Margin="569,170,0,0" Stroke="Black" VerticalAlignment="Top" RadiusX="10" RadiusY="10" Width="123" Fill="#000000"/>
+        <Rectangle HorizontalAlignment="Left" Height="28" Margin="152,168,0,0" Stroke="Black" VerticalAlignment="Top" RadiusX="10" RadiusY="10" Width="145" Fill="#000000"/>
+
+
+        <Label x:Name="lb_Mail" Content="" HorizontalAlignment="Left" Margin="344,171,0,0" VerticalAlignment="Top" Foreground="White" Width="153"/>
+        <Label x:Name="lb_Phone" Content="" HorizontalAlignment="Left" Margin="569,171,0,0" VerticalAlignment="Top" Foreground="White" Width="123"/>
+        <Rectangle HorizontalAlignment="Center" Height="20" Margin="0,138,0,0" Stroke="Black" VerticalAlignment="Top" RadiusX="10" RadiusY="10" Width="144" Fill="#000000"/>
+        <Rectangle HorizontalAlignment="Left" Height="176" Stroke="Black" Opacity="0.5" Fill="#000000" VerticalAlignment="Top" RadiusX="10" RadiusY="10" Width="560" Margin="123,220,0,0"/>
+        <Rectangle HorizontalAlignment="Left" Height="151" Margin="301,233,0,0" Stroke="Black" VerticalAlignment="Top" RadiusX="10" RadiusY="10" Width="204" Fill="DarkCyan"/>
+        <Rectangle HorizontalAlignment="Left" Height="91" Margin="539,233,0,0" Stroke="Black" VerticalAlignment="Top" RadiusX="10" RadiusY="10" Width="132" Fill="DarkSlateGray"/>
+        <Label Content="Личные данные" HorizontalAlignment="Center" Margin="0,135,0,0" VerticalAlignment="Top" Width="146" Height="24" HorizontalContentAlignment="Center" Foreground="White" FontFamily="Sylfaen"/>
+        <Label Content="Логин:" HorizontalAlignment="Left" Margin="103,170,0,0" VerticalAlignment="Top" Width="55" Height="24" HorizontalContentAlignment="Center" Foreground="White" FontFamily="Sylfaen"/>
+        <Label Content="Почта:" HorizontalAlignment="Left" Margin="297,172,0,0" VerticalAlignment="Top" Width="55" Height="24" HorizontalContentAlignment="Center" Foreground="White" FontFamily="Sylfaen"/>
+        <Label Content="Телефон:" HorizontalAlignment="Left" Margin="509,171,0,0" VerticalAlignment="Top" Width="60" Height="24" HorizontalContentAlignment="Center" Foreground="White" FontFamily="Sylfaen"/>
+        <Label x:Name="lb_VidNomera" Content="" HorizontalAlignment="Left" Margin="309,244,0,0" VerticalAlignment="Top" Width="188" HorizontalContentAlignment="Center" Height="23" FontFamily="Rockwell"/>
+        <Label x:Name="lb_Bed" Content="" HorizontalAlignment="Left" Margin="309,278,0,0" VerticalAlignment="Top" Width="188" HorizontalContentAlignment="Center" FontFamily="Rockwell"/>
+        <Label x:Name="lb_Price" Content="" HorizontalAlignment="Left" Margin="331,349,0,0" VerticalAlignment="Top" Width="150" HorizontalContentAlignment="Center" FontFamily="Rockwell"/>
+        <Label x:Name="lb_Nomer" Content="" HorizontalAlignment="Left" Margin="301,312,0,0" VerticalAlignment="Top" Width="204" HorizontalContentAlignment="Center" FontFamily="Rockwell"/>
+        <Label x:Name="lb_Zaselen" Content="" HorizontalAlignment="Left" Margin="543,254,0,0" VerticalAlignment="Top" Width="122" HorizontalContentAlignment="Center" FontFamily="Rockwell"/>
+        <Label x:Name="lb_Viselen" Content="" HorizontalAlignment="Left" Margin="539,294,0,0" VerticalAlignment="Top" Width="132" HorizontalContentAlignment="Center" FontFamily="Rockwell"/>
+        <Label Content="Способ оплаты:" HorizontalAlignment="Left" Margin="168,261,0,0" VerticalAlignment="Top" Width="130" Height="21" HorizontalContentAlignment="Center" FontSize="11" Foreground="White" FontFamily="Sylfaen"/>
+        <Label x:Name="lb_Login" Content="" HorizontalAlignment="Left" Margin="152,170,0,0" VerticalAlignment="Top" Foreground="White" Width="141" Height="24"/>
+        <ComboBox x:Name="cb_sposoboplat" HorizontalAlignment="Left" Margin="173,289,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Тип номера:" HorizontalAlignment="Left" Margin="353,229,0,0" VerticalAlignment="Top" Width="100" Height="28" HorizontalContentAlignment="Center" Foreground="White" FontFamily="Sylfaen"/>
+        <Label Content="Тип кроватей:" HorizontalAlignment="Left" Margin="355,261,0,0" VerticalAlignment="Top" Width="100" Height="27" HorizontalContentAlignment="Center" Foreground="White" FontFamily="Sylfaen"/>
+        <Label Content="Номер:" HorizontalAlignment="Left" Margin="353,296,0,0" VerticalAlignment="Top" Width="100" Height="26" HorizontalContentAlignment="Center" Foreground="White" FontFamily="Sylfaen"/>
+        <Label Content="Цена:" HorizontalAlignment="Left" Margin="353,331,0,0" VerticalAlignment="Top" Width="100" Height="26" HorizontalContentAlignment="Center" Foreground="White" FontFamily="Sylfaen"/>
+        <Label Content="Дата заезда:" HorizontalAlignment="Left" Margin="555,233,0,0" VerticalAlignment="Top" Width="100" Height="28" HorizontalContentAlignment="Center" Foreground="White" FontFamily="Sylfaen"/>
+        <Label Content="Дата выезда:" HorizontalAlignment="Left" Margin="555,272,0,0" VerticalAlignment="Top" Width="100" Height="28" HorizontalContentAlignment="Center" Foreground="White" FontFamily="Sylfaen"/>
+
+
+
+
+
+
 
     </Grid>
 </Window>

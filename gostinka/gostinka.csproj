@@ -56,6 +56,16 @@
     <Reference Include="MySql.Data, Version=8.2.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.8.2.0\lib\net462\MySql.Data.dll</HintPath>
     </Reference>
+    <Reference Include="OxyPlot, Version=2.1.2.0, Culture=neutral, PublicKeyToken=638079a8f0bd61e9, processorArchitecture=MSIL">
+      <HintPath>..\packages\OxyPlot.Core.2.1.2\lib\net45\OxyPlot.dll</HintPath>
+    </Reference>
+    <Reference Include="OxyPlot.Wpf, Version=2.1.2.0, Culture=neutral, PublicKeyToken=75e952ba404cdbb0, processorArchitecture=MSIL">
+      <HintPath>..\packages\OxyPlot.Wpf.2.1.2\lib\net45\OxyPlot.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="OxyPlot.Wpf.Shared, Version=2.1.2.0, Culture=neutral, PublicKeyToken=75e952ba404cdbb0, processorArchitecture=MSIL">
+      <HintPath>..\packages\OxyPlot.Wpf.Shared.2.1.2\lib\net45\OxyPlot.Wpf.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="ReachFramework" />
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
@@ -79,6 +89,7 @@
     <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
     </Reference>
+    <Reference Include="System.Printing" />
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
@@ -114,9 +125,11 @@
       <DependentUpon>chetirmest.xaml</DependentUpon>
     </Compile>
     <Compile Include="DataBase.cs" />
+    <Compile Include="DataPointItem.cs" />
     <Compile Include="glavnaya.xaml.cs">
       <DependentUpon>glavnaya.xaml</DependentUpon>
     </Compile>
+    <Compile Include="InfoNomer.cs" />
     <Compile Include="koika.xaml.cs">
       <DependentUpon>koika.xaml</DependentUpon>
     </Compile>
@@ -125,6 +138,9 @@
     </Compile>
     <Compile Include="oplatanom.xaml.cs">
       <DependentUpon>oplatanom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="oplatausluga.xaml.cs">
+      <DependentUpon>oplatausluga.xaml</DependentUpon>
     </Compile>
     <Compile Include="profile.xaml.cs">
       <DependentUpon>profile.xaml</DependentUpon>
@@ -135,9 +151,11 @@
     <Compile Include="studia.xaml.cs">
       <DependentUpon>studia.xaml</DependentUpon>
     </Compile>
+    <Compile Include="User.cs" />
     <Compile Include="usluga.xaml.cs">
       <DependentUpon>usluga.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Uslugi.cs" />
     <Compile Include="vhod.xaml.cs">
       <DependentUpon>vhod.xaml</DependentUpon>
     </Compile>
@@ -169,6 +187,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="oplatanom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="oplatausluga.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -215,6 +237,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -299,6 +323,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="image\oformlenie.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\oplatausl.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

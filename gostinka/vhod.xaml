@@ -169,6 +169,6 @@
         <Button Style="{DynamicResource ButtonStyle228}" Click="Button_vhod" Content="Авторизоваться" HorizontalAlignment="Center" Margin="0,283,0,0" VerticalAlignment="Top" Height="28" Width="216" Background="Red" Foreground="white" />
         <Button x:Name="Button_vhodAdmin" Content="Администратор" HorizontalAlignment="Left" VerticalAlignment="Top" Height="40" Width="99" Background="#000000" Foreground="white" Margin="691,373,0,0" Click="Button_Click_1" />
         <Button Style="{DynamicResource ButtonStyle228}" Click="Button_noacc" Content="Нет аккаунта?" HorizontalAlignment="Center" Margin="0,326,0,0" VerticalAlignment="Top" Height="19" Width="156" Background="Gray" Foreground="white" />
-        <TextBox x:Name="tbPassvhod" Style="{DynamicResource TextBoxStyle228}" HorizontalAlignment="Left" Margin="344,214,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="216" Background="Black" Foreground="White" Height="34" FontSize="18"/>
+        <PasswordBox x:Name="tb_Pass" HorizontalAlignment="Left" Margin="344,214,0,0" VerticalAlignment="Top" Width="216" Background="Black" Foreground="White" Height="34" FontSize="18" Style="{DynamicResource PasswordBoxStyle1}"/>
     </Grid>
 </Window>

@@ -67,13 +67,11 @@
         <ImageBrush ImageSource="image/glav.jpg"/>
     </Window.Background>
     <Grid>
-        <Rectangle HorizontalAlignment="Center" Height="50" Margin="0,21,0,0" Stroke="Black" VerticalAlignment="Top" RadiusX="30" RadiusY="30" Width="432" Fill="#150909"/>
-        <Label Content="NEFORMALHOTEL" HorizontalAlignment="Center" Margin="0,21,0,0" VerticalAlignment="Top" Width="276" Height="61" HorizontalContentAlignment="Center" FontSize="25" Foreground="White" FontFamily="Sylfaen"/>
-        <Rectangle HorizontalAlignment="Center" Height="316" Stroke="Black" Opacity="0.8" Fill="#000000" VerticalAlignment="Top" RadiusX="40" RadiusY="40" Width="644" Margin="0,87,0,0"/>
-        <Rectangle HorizontalAlignment="Left" Height="84" Margin="128,133,0,0" Stroke="Black" VerticalAlignment="Top" Width="234" Fill="#625555"/>
-        <Label Content="«ЛЮКС» Номер" HorizontalAlignment="Left" Margin="162,133,0,0" VerticalAlignment="Top" Width="158" FontSize="15" FontWeight="Bold" HorizontalContentAlignment="Center" RenderTransformOrigin="0.415,0.609"/>
-        <Label Content="От 21999₽ за ночь" HorizontalAlignment="Left" Margin="148,159,0,0" VerticalAlignment="Top" Width="194" FontFamily="Yu Gothic UI Light" HorizontalContentAlignment="Center" FontSize="14"/>
-        <Button Style="{DynamicResource ButtonStyle22}" Click="Button_luxe" Content="Подробнее" HorizontalAlignment="Left" Margin="204,188,0,0" VerticalAlignment="Top" Height="23" Width="82" Background="#BC9595" Foreground="Black"  />
+        <Rectangle HorizontalAlignment="Center" Height="364" Stroke="Black" Opacity="0.8" Fill="#000000" VerticalAlignment="Top" RadiusX="40" RadiusY="40" Width="755" Margin="0,39,0,0"/>
+        <Rectangle HorizontalAlignment="Left" Height="84" Margin="52,64,0,0" Stroke="Black" VerticalAlignment="Top" Width="234" Fill="#625555"/>
+        <Label Content="Мужские стрижки" HorizontalAlignment="Left" Margin="90,64,0,0" VerticalAlignment="Top" Width="158" FontSize="15" FontWeight="Bold" HorizontalContentAlignment="Center" RenderTransformOrigin="0.415,0.609"/>
+        <Label Content="от 999р" HorizontalAlignment="Left" Margin="72,86,0,0" VerticalAlignment="Top" Width="194" FontFamily="Yu Gothic UI Light" HorizontalContentAlignment="Center" FontSize="14"/>
+        <Button Style="{DynamicResource ButtonStyle22}" Click="Button_luxe" Content="Подробнее" HorizontalAlignment="Left" Margin="128,120,0,0" VerticalAlignment="Top" Height="23" Width="82" Background="#BC9595" Foreground="Black"  />
         <Rectangle HorizontalAlignment="Left" Height="84" Margin="444,133,0,0" Stroke="Black" VerticalAlignment="Top" Width="234" Fill="#625555"/>
         <Label Content="«4 места» Номер" HorizontalAlignment="Left" Margin="487,133,0,0" VerticalAlignment="Top" Width="158" FontSize="15" FontWeight="Bold" HorizontalContentAlignment="Center" RenderTransformOrigin="0.415,0.609"/>
         <Label Content="От 8999₽ за ночь" HorizontalAlignment="Left" Margin="464,159,0,0" VerticalAlignment="Top" Width="194" FontFamily="Yu Gothic UI Light" HorizontalContentAlignment="Center" FontSize="14"/>
@@ -85,9 +83,8 @@
         <Rectangle HorizontalAlignment="Left" Height="84" Margin="444,278,0,0" Stroke="Black" VerticalAlignment="Top" Width="234" Fill="#625555"/>
         <Label Content="«Студия» Номер" HorizontalAlignment="Left" Margin="487,282,0,0" VerticalAlignment="Top" Width="158" FontSize="15" FontWeight="Bold" HorizontalContentAlignment="Center" RenderTransformOrigin="0.415,0.609"/>
         <Label Content="От 5999₽ за ночь" HorizontalAlignment="Left" Margin="464,303,0,0" VerticalAlignment="Top" Width="194" FontFamily="Yu Gothic UI Light" HorizontalContentAlignment="Center" FontSize="14"/>
-        <Button Style="{DynamicResource ButtonStyle22}" Click="Button_usluga" Content="Подробнее" HorizontalAlignment="Left" Margin="525,332,0,0" VerticalAlignment="Top" Height="23" Width="82" Background="#BC9595" Foreground="Black" />
+        <Button Style="{DynamicResource ButtonStyle22}" Click="Button_stud" Content="Подробнее" HorizontalAlignment="Left" Margin="525,332,0,0" VerticalAlignment="Top" Height="23" Width="82" Background="#BC9595" Foreground="Black" />
         <Button  Content="Профиль" HorizontalAlignment="Left" Margin="715,-1,0,0" VerticalAlignment="Top" Height="40" Width="85" Background="#000000" Foreground="white" Click="Button_Click" />
-        <Button  Content="Выйти" HorizontalAlignment="Left" VerticalAlignment="Top" Height="40" Width="85" Background="#000000" Foreground="white" Margin="0,-1,0,0" Click="Button_Click_1" />
         <Button Style="{DynamicResource ButtonStyle22}"  Click="Button_usluga" Content="Услуги" HorizontalAlignment="Center" Margin="0,225,0,0" VerticalAlignment="Top" Height="40" Width="84" Background="Red" Foreground="white" />
     </Grid>
 </Window>

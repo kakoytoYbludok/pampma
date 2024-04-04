@@ -10,9 +10,12 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using OxyPlot;
+using OxyPlot.Series;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using OxyPlot.Axes;
 
 namespace gostinka
 {
@@ -21,9 +24,25 @@ namespace gostinka
     /// </summary>
     public partial class AdminPanel : Window
     {
+        public PlotModel PlotModel { get; set; }
         public AdminPanel()
         {
             InitializeComponent();
+            PlotModel = new PlotModel();
+
+            // Add series to the plot model
+            var series = new LineSeries();
+            series.MarkerType = MarkerType.Circle;
+            series.MarkerSize = 6;
+            series.MarkerStroke = OxyColors.Black;
+            series.MarkerFill = OxyColors.Red;
+            series.Points.Add(new DataPoint(1, 87926));
+
+            // Add more data points as needed
+
+            PlotModel.Series.Add(series);
+
+            DataContext = this;
         }
 
         private void TableUserFill()

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:gostinka"
         mc:Ignorable="d"
-        Title="registr" Height="450" Width="800" Loaded="reg_loaded">
+        Title="registr" Height="450" Width="800">
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -172,6 +172,6 @@
         <Label Content="Почта" HorizontalAlignment="Left" Margin="279,241,0,0" VerticalAlignment="Top" Width="76" Height="33" HorizontalContentAlignment="Center" FontSize="18" Foreground="White" FontFamily="Sylfaen"/>
         <Label Content="Телефон" HorizontalAlignment="Left" Margin="274,274,0,0" VerticalAlignment="Top" Width="81" Height="33" HorizontalContentAlignment="Center" FontSize="18" Foreground="White" FontFamily="Sylfaen"/>
         <TextBox x:Name="tbPhone" Style="{DynamicResource TextBoxStyle228}" HorizontalAlignment="Left" Margin="369,279,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="157" Background="Black" Foreground="White" Height="25" FontSize="13"/>
-        <TextBox x:Name="tbPass" Style="{DynamicResource TextBoxStyle228}" HorizontalAlignment="Left" Margin="369,210,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="157" Background="Black" Foreground="White" Height="26" FontSize="13"/>
+        <PasswordBox x:Name="tb_Pass" HorizontalAlignment="Left" Margin="369,210,0,0" VerticalAlignment="Top" Width="157" Background="Black" Foreground="White" Height="26" FontSize="18" Style="{DynamicResource PasswordBoxStyle1}"/>
     </Grid>
 </Window>

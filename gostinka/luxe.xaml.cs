@@ -11,6 +11,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Media.Media3D;
 using System.Windows.Shapes;
 
 namespace gostinka
@@ -21,6 +22,7 @@ namespace gostinka
     public partial class luxe : Window
     {
         int i = 1;
+        bool correctcost = false;
         DataBaseClass dataBase = new DataBaseClass();
         public luxe()
         {
@@ -55,14 +57,15 @@ namespace gostinka
 
        
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
+        
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            Uslugi.Instance.InitUsluga3(cb_VidNomera.Text, Convert.ToInt32(lab_itogluxe.Content), data_luxezaezd.SelectedDate, cb_Time.Text);
+            oplatanom oplatanom = new oplatanom();
+            //vhod.ShowDialog();
+            oplatanom.Show();
+            this.Close();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -76,42 +79,44 @@ namespace gostinka
         private void luxe_Loaded(object sender, RoutedEventArgs e)
         {
             FillComboBoxVidNomer();
-            
+            btn_perehodluxe.IsEnabled = correctcost;
 
         }
 
         private void FillComboBoxVidNomer()
         {
-            string tablename = "[dbo].[Infonomer]";
-            string columnname = "VidNomera";
+            string tablename = "[dbo].[Uslugi]";
+            string columnname = "ManStr";
             DataBaseClass dataBase = new DataBaseClass();
             cb_VidNomera.ItemsSource = dataBase.Getcolumndata(tablename, columnname).DefaultView;
-            cb_VidNomera.DisplayMemberPath = "VidNomera";
+            cb_VidNomera.DisplayMemberPath = "ManStr";
         }
 
         private void FillComBoxTypeBed()
         {
             string Vid = cb_VidNomera.Text;
-            cb_TypeBed.ItemsSource = dataBase.GetTypeBed(Vid).DefaultView;
-            cb_TypeBed.DisplayMemberPath = "Bed";
         }
 
         private void FillComBoxNomer()
         {
-            string Bed = cb_TypeBed.Text;
             string Vid = cb_VidNomera.Text;
-            cb_Nomer.ItemsSource = dataBase.GetNomer(Vid, Bed).DefaultView;
-            cb_Nomer.DisplayMemberPath = "NumberNomer";
+        }
+
+        private void FillComboBoxTime()
+        {
+            string tablename = "[dbo].[Zakaz]";
+            string columnname = "Time";
+            cb_Time.ItemsSource = dataBase.Getcolumndata(tablename, columnname).DefaultView;
+            cb_VidNomera.DisplayMemberPath = "Time";
+
         }
 
 
-       
 
         private void cb_VidNomera_DropDownClosed(object sender, EventArgs e)
         {
             FillComBoxTypeBed();
-            lab_itogluxe.Content = CalculateCost();
-
+            btn_perehodluxe.IsEnabled = correctcost;
         }
 
         
@@ -119,17 +124,25 @@ namespace gostinka
             private void cb_TypeBed_DropDownClosed(object sender, EventArgs e)
         { 
             FillComBoxNomer();
-            lab_itogluxe.Content = CalculateCost();
+            btn_perehodluxe.IsEnabled = correctcost;
         }
+
+        private void cb_Nomer_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            btn_perehodluxe.IsEnabled = correctcost;
+        }
+
 
         private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
-            lab_itogluxe.Content = CalculateCost();
+           
+            btn_perehodluxe.IsEnabled = correctcost;
         }
 
         private void data_luxeviezd_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
-            lab_itogluxe.Content = CalculateCost();
+            btn_perehodluxe.IsEnabled = correctcost;
+
         }
 
         private int CountDays(DateTime? date1, DateTime? date2)
@@ -142,17 +155,16 @@ namespace gostinka
             return -1; 
         }
 
-        private string CalculateCost()
+       
+
+        private void cb_Time_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
-            int countdays = CountDays(data_luxezaezd.SelectedDate, data_luxeviezd.SelectedDate);          
-            int cost = dataBase.GetCost(cb_TypeBed.Text);
-            if (countdays == -1 || cost == -1)
-            {
-                return "Выберите остальные данные";
-            }
-            int result = countdays * cost;
-            return result.ToString(); 
+        }
+
+        private void cb_Time_DropDownClosed(object sender, EventArgs e)
+        {
+            DataBaseClass dataBase = new DataBaseClass();
         }
     }
 }
